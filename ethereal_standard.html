@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ethereal Platform Registration</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff88;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo img {
+      max-width: 120px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p.description {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .textbox-container {
+      background: #222;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    }
+
+    .textbox-container p {
+      margin-bottom: 1rem;
+    }
+
+    .textbox-container input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1.2rem;
+      border-radius: 0.8rem;
+      border: none;
+      background: #444;
+      color: #00ff88;
+      text-align: center;
+    }
+
+    .textbox-container button {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      font-size: 1rem;
+      background-color: #00ff88;
+      color: #000;
+      border: none;
+      border-radius: 0.8rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .textbox-container a {
+      color: #00ff88;
+      text-decoration: underline;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .links a {
+      display: block;
+      color: #00ff88;
+      text-decoration: underline;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .faq {
+      background: #111;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .faq h3 {
+      text-align: center;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .faq p {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .textbox-container {
+        padding: 1rem;
+      }
+
+      .textbox-container input,
+      .textbox-container button {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Ethereal Platform",
+        "url": "https://etherealappregistration.com",
+        "logo": "https://ethereal_logo-removebg-preview.png"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Ethereal Platform Registration",
+        "url": "https://etherealappregistration.com/register",
+        "description": "Register on Ethereal Platform to earn money through tasks, reviews, and referrals.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Ethereal Platform"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Ethereal Platform?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ethereal Platform is an online earning platform where users can earn money by completing simple tasks like watching videos, streaming, reviewing, and referring others."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much is the registration fee?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The registration fee is ₦14,000, which gives you access to all earning opportunities on the platform."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I earn on Ethereal Platform?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can earn through activation bonuses, daily jobs, streaming music, watching videos, reviewing, and referrals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need referrals to earn?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, you can earn without referrals, but referring others increases your earnings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I withdraw my earnings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can withdraw your earnings to your bank account once you reach the minimum withdrawal threshold."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Ethereal an App?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ethereal isn’t an app but a website. To register for Ethereal, fill the form above."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="images/ethereal_logo-removebg-preview.png" alt="Ethereal Logo">
+    </div>
+
+    <h2>How to Register on Ethereal Platform</h2>
+    <p class="description">To register, copy the account name below and follow the instructions.</p>
+
+    <div class="textbox-container">
+      <p>FOR ETHEREAL STANDARD PACKAGE</p>
+      <p>MAKE PAYMENTS OF ₦9,000 TO THIS ACCOUNT DETAILS</p>
+      <input id="accountName" value="6054080105" readonly>
+      <button onclick="copyText()">Copy</button>
+      <p>Account Bank: Moniepoint</p>
+      <p>Account Name: Spino Clinton Uchenna</p>
+      <a href="https://wa.link/f5azxg">DONE PAYMENTS? CLICK HERE (ONLY CLICK ONCE YOU'VE MADE PAYMENTS)</a>
+    </div>
+
+    <div class="links">
+      <a href="https://wa.link/fb6hzc">NOT FROM NIGERIA? CLICK HERE</a>
+    </div>
+
+    <div class="faq">
+      <h3>Frequently Asked Questions (FAQ)</h3>
+      <p><strong>1. What is Ethereal Platform?</strong><br>Ethereal Platform is an online earning platform where users can earn money by completing simple tasks like watching videos, streaming, reviewing, and referring others.</p>
+      <p><strong>2. How much is the registration fee?</strong><br>The registration fee is ₦14,000, which gives you access to all earning opportunities on the platform.</p>
+      <p><strong>3. How can I earn on Ethereal Platform?</strong><br>You can earn through activation bonuses, daily jobs, streaming music, watching videos, reviewing, and referrals.</p>
+      <p><strong>4. Do I need referrals to earn?</strong><br>No, you can earn without referrals, but referring others increases your earnings.</p>
+      <p><strong>5. How do I withdraw my earnings?</strong><br>You can withdraw your earnings to your bank account once you reach the minimum withdrawal threshold.</p>
+      <p><strong>6. Is Ethereal an App?</strong><br>Ethereal isn’t an app but a website. To register for Ethereal, fill the form above.</p>
+    </div>
+  </div>
+
+  <script>
+    function copyText() {
+      const input = document.getElementById("accountName");
+      input.select();
+      input.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Account number copied: " + input.value);
+    }
+  </script>
+</body>
+</html>
