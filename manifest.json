@@ -1,0 +1,22 @@
+{
+  "name": "Ethereal Platform",
+  "short_name": "Ethereal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#6c5ce7",
+  "description": "Earn online by streaming, reviewing, and referring with Ethereal. Register once and unlock full access to monetization opportunities.",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/image/ethereal_logo-removebg-preview.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/image/ethereal_logo-removebg-preview.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
