@@ -1,44 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
+  <!-- Home Page -->
   <url>
     <loc>https://etherealappregistration.com/index.html</loc>
+    <lastmod>2025-08-10</lastmod>
+    <priority>1.00</priority>
   </url>
+
+  <!-- FAQ -->
   <url>
-    <loc>https://etherealappregistration.com/ethereal_registration.html</loc>
+    <loc>https://etherealappregistration.com/faq.html</loc>
+    <lastmod>2025-08-10</lastmod>
+    <priority>0.85</priority>
   </url>
+
+  <!-- Video Sitemap Entry -->
   <url>
-    <loc>https://etherealappregistration.com/ethereal_registration2.html</loc>
-  </url>
-  <url>
-    <loc>https://etherealappregistration.com/ethereal_registration3.html</loc>
-  </url>
-  <url>
-    <loc>https://etherealappregistration.com/ethereal_registration4.html</loc>
-  </url>
-  <url>
-    <loc>https://etherealappregistration.com/ethereal_registration5.html</loc>
-  </url>
-  <url>
-    <loc>https://etherealappregistration.com/ethereal_registration6.html</loc>
-  </url>
-  <url>
-    <loc>https://etherealappregistration.com/ethereal_registration7.html</loc>
-  </url>
-  <url>
-    <loc>https://etherealappregistration.com/ethereal_registration8.html</loc>
-  </url>
-  <url>
-    <loc>https://etherealappregistration.com/ethereal_registration9.html</loc>
-  </url>
-  <url>
-    <loc>https://etherealappregistration.com/ethereal_registration10.html</loc>
-  </url>
-  <url>
-    <loc>https://etherealappregistration.com/ethereal_standard.html</loc>
-  </url>
-  <url>
-    <loc>https://etherealappregistration.com/etherealX.html</loc>
+    <loc>https://etherealappregistration.com/index.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://etherealappregistration.com/ethereal_logo.png</video:thumbnail_loc>
+      <video:title>Ethereal Platform Intro</video:title>
+      <video:description>Learn how Ethereal helps users earn through social connections, games, and digital engagement.</video:description>
+      <video:content_loc>https://etherealappregistration.com/video/ethereal.mp4</video:content_loc>
+      <video:publication_date>2025-08-10</video:publication_date>
+      <video:duration>90</video:duration>
+    </video:video>
   </url>
 
 </urlset>
