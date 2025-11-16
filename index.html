@@ -3,65 +3,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>OPay Auto QR Payment</title>
+  <title>Pay with OPay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b1720;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #101b26;
+      padding: 24px 28px;
+      border-radius: 16px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      max-width: 360px;
+      width: 90%;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    #payBtn {
+      padding: 12px 22px;
+      font-size: 16px;
+      background: #00c46a;
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    #payBtn:active {
+      transform: scale(0.98);
+    }
+    #opayQr {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
-  <!-- Your Make Payment button -->
-  <button id="makePaymentBtn"
-          style="padding:12px 24px;font-size:16px;background:#00c46a;color:#fff;border:none;border-radius:6px;cursor:pointer;">
-    Make Payment with OPay
-  </button>
+  <div class="card">
+    <h1>Pay with OPay</h1>
+    <p>Tap the button below. We will open your OPay app with the payment details filled automatically.</p>
+    <button id="payBtn">Make Payment</button>
+  </div>
 
-  <!-- Hidden OPay QR image (real QR from OPay app) -->
-  <img id="opayQr"
-       src="opay-qr.jpg"  <!-- 👈 change this to your actual QR image path -->
-       alt="OPay QR"
-       style="display:none;" />
+  <!-- Hidden QR image (replace src with your real OPay QR image) -->
+  <img id="opayQr" src="opay-qr.jpg" alt="OPay QR" />
 
-  <!-- jsQR library from CDN -->
+  <!-- jsQR library -->
   <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 
   <script>
-    const button = document.getElementById("makePaymentBtn");
+    const payBtn = document.getElementById("payBtn");
     const qrImg = document.getElementById("opayQr");
 
-    button.addEventListener("click", () => {
+    payBtn.addEventListener("click", function () {
       if (!qrImg.complete) {
-        qrImg.onload = () => decodeOpayQr(qrImg);
+        qrImg.onload = function () {
+          decodeAndRedirect(qrImg);
+        };
       } else {
-        decodeOpayQr(qrImg);
+        decodeAndRedirect(qrImg);
       }
     });
 
-    function decodeOpayQr(img) {
-      const canvas = document.createElement("canvas");
-      const ctx = canvas.getContext("2d");
+    function decodeAndRedirect(img) {
+      try {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
 
-      canvas.width = img.naturalWidth;
-      canvas.height = img.naturalHeight;
+        canvas.width = img.naturalWidth || img.width;
+        canvas.height = img.naturalHeight || img.height;
 
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const code = jsQR(imageData.data, canvas.width, canvas.height);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const code = jsQR(imageData.data, canvas.width, canvas.height);
 
-      if (!code) {
-        alert("Could not read the OPay QR. Please use the real QR image from the OPay app.");
-        return;
-      }
+        if (!code || !code.data) {
+          alert("Could not read the OPay QR. Please confirm you used the real QR image from the OPay app.");
+          return;
+        }
 
-      const payload = code.data.trim();
-      console.log("Decoded QR data:", payload);
+        const payload = code.data.trim();
+        console.log("Decoded QR data:", payload);
 
-      if (/^https?:\/\//i.test(payload) ||
-          /^opay:/i.test(payload) ||
-          /^ope:\/\//i.test(payload)) {
-        window.location.href = payload;
-      } else {
-        alert("QR scanned, but it does not look like a link:\n\n" + payload);
+        if (/^https?:\/\//i.test(payload) || /^opay:/i.test(payload) || /^ope:\/\//i.test(payload)) {
+          window.location.href = payload;
+        } else {
+          alert("QR scanned, but it does not look like a link:\n\n" + payload);
+        }
+      } catch (err) {
+        console.error(err);
+        alert("An error occurred while reading the QR code.");
       }
     }
   </script>
 </body>
 </html>
-
